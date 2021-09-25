@@ -1,0 +1,3 @@
+export const FTECH_LIST = 'FTECH_LIST';
+export const FTECH_LIST_SUCCSESS = 'FTECH_LIST_SUCCSESS';
+export const FTECH_LIST_FAIL = 'FTECH_LIST_FAIL';

@@ -1,0 +1,63 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Iphone X",
+      "TypeProduct": "IP",
+      "description": "Iphone 13d",
+      "Price": "200$"
+    },
+    {
+      "id": "2",
+      "name": "XIAOMI 11s",
+      "TypeProduct": "XM",
+      "description": "XIAOMI MI 10 aaa",
+      "Price": "300$"
+    },
+    {
+      "id": "3",
+      "name": "SAMSUNG GALAXY 12",
+      "TypeProduct": "SS",
+      "description": "SAMSUNG GALAXY 12222222",
+      "Price": "400$"
+    },
+    {
+      "id": " 4",
+      "name": "Iphone XXx",
+      "TypeProduct": "IP",
+      "description": "Iphone 13",
+      "Price": "2000$"
+    },
+    {
+      "id": "5",
+      "name": "XIAOMI 111",
+      "TypeProduct": "XM",
+      "description": "XIAOMI MI 10 aaa",
+      "Price": "3000$"
+    },
+    {
+      "id": "6",
+      "name": "SAMSUNG GALAXY 122",
+      "TypeProduct": "SS",
+      "description": "SAMSUNG GALAXY 12222222",
+      "Price": "404200$"
+    }
+  ],
+  "dataType": [
+    {
+      "id": "2",
+      "code": "XM",
+      "name": "XIAOMI"
+    },
+    {
+      "id": "3",
+      "code": "SS",
+      "name": "SAMSUNG"
+    },
+    {
+      "name": "Iphone",
+      "code": "IP",
+      "id": "lebF77o"
+    }
+  ]
+}
