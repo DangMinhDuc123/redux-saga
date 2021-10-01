@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import store from './redux/store';
+import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from 'react-router-dom';
-import { CssBaseline } from '@material-ui/core'
-
+import { CssBaseline } from '@material-ui/core';
+import { history } from './utils'
+import { ConnectedRouter } from 'connected-react-router'
+import './i18n/i18n'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <CssBaseline />
-        <App />
-      </BrowserRouter>
-    </Provider>
-  </React.StrictMode>,
+    <Suspense fallback="loading">
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <CssBaseline />
+          <App />
+        </ConnectedRouter>
+      </Provider>
+    </Suspense>
+  </React.StrictMode >,
   document.getElementById('root')
 );
 

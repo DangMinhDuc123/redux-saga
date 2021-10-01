@@ -2,14 +2,15 @@ import React, { useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import ListPage from './pages/ListPage'
 import AddEditPage from './pages/AddEditPage'
-import { listTypeProducts } from '../../redux/actions/typeproduct'
 import { useDispatch } from 'react-redux';
+import { typeProductActions } from '../typeproduct/typeProductSlice';
 
 const Product = () => {
 
     const dispatch = useDispatch();
+
     useEffect(() => {
-        dispatch(listTypeProducts())
+        dispatch(typeProductActions.fetchTypeProductList())
     }, [dispatch])
 
     return (

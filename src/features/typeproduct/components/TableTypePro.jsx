@@ -1,5 +1,6 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(theme => ({
     table: {},
@@ -9,6 +10,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const TableTypePro = (props) => {
+    const { t } = useTranslation();
     const classes = useStyles();
     const { listTypeProduct, onRemove, onEdit } = props;
     const [selectedProduct, setSelectedProduct] = useState(listTypeProduct);
@@ -34,9 +36,9 @@ const TableTypePro = (props) => {
                     <TableHead>
                         <TableRow>
                             <TableCell >#</TableCell>
-                            <TableCell >CODE</TableCell>
-                            <TableCell >Name</TableCell>
-                            <TableCell align="right">Actions</TableCell>
+                            <TableCell >{t('Code')}</TableCell>
+                            <TableCell >{t('Name')}</TableCell>
+                            <TableCell align="right">{t('ActionsTableProduct')}</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -47,9 +49,9 @@ const TableTypePro = (props) => {
                                 <TableCell>{typePro.name}</TableCell>
                                 <TableCell align="right">
                                     <Button className={classes.edit} variant="contained" color="primary"
-                                        onClick={() => onEdit(typePro)}>Edit</Button>
+                                        onClick={() => onEdit(typePro)}>{t('Edit')}</Button>
                                     <Button variant="outlined" color="secondary"
-                                        onClick={() => handleRemove(typePro)}>Delete</Button>
+                                        onClick={() => handleRemove(typePro)}>{t('Delete')}</Button>
                                 </TableCell>
                             </TableRow>
                         ))}

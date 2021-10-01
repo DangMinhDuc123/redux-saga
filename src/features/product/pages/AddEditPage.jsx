@@ -56,6 +56,7 @@ const AddEditPage = () => {
             </Box>
             <Typography variant='h4'>
                 {isEdit ? 'Update' : 'Add new product'}
+
             </Typography>
 
             {(!isEdit || Boolean(product)) && (

@@ -15,7 +15,7 @@ export function InputField({ control, name, label, ...inputProps }) {
     return (
         <TextField
             display
-            fullwidth
+            fullWidth
             size="small"
             margin="normal"
             variant="outlined"

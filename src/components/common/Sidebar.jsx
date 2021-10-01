@@ -7,6 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import { Dashboard } from '@material-ui/icons';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Sidebar = () => {
-
+    const { t } = useTranslation();
     const classes = useStyles();
 
     return (
@@ -32,11 +33,11 @@ const Sidebar = () => {
         <div className={classes.root}>
             <List component="nav" aria-label="main mailbox folders">
                 <NavLink to="/admin/dashboard" className={classes.link}>
-                    <ListItem button select={true}>
+                    <ListItem button select="true" >
                         <ListItemIcon>
                             <Dashboard />
                         </ListItemIcon>
-                        <ListItemText primary=" Dashboard" />
+                        <ListItemText primary={t('Dashboard')} />
                     </ListItem>
                 </NavLink>
                 <NavLink to="/admin/products" className={classes.link}>
@@ -44,7 +45,7 @@ const Sidebar = () => {
                         <ListItemIcon>
                             <DraftsIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Products" />
+                        <ListItemText primary={t('Products')} />
                     </ListItem>
                 </NavLink>
                 <NavLink to="/admin/typeProduct" className={classes.link}>
@@ -52,7 +53,7 @@ const Sidebar = () => {
                         <ListItemIcon>
                             <DraftsIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Type Product" />
+                        <ListItemText primary={t('TypeProduct')} />
                     </ListItem>
                 </NavLink>
             </List>

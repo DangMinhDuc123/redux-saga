@@ -1,12 +1,12 @@
 import { Box, makeStyles } from '@material-ui/core';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-// import TaskBoard from '../../containers/TaskBoard';
 import DashBoard from '../../features/dashboard';
 import ProductFeatures from '../../features/product';
 import ListTypeProductFeatures from '../../features/typeproduct'
 import Header from '../common/Header';
 import Sidebar from '../common/Sidebar';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
 const AdminLayout = () => {
     const classes = useStyles();
     return (
+
         <Box className={classes.root}>
             <Box className={classes.header}>
                 <Header />
@@ -42,8 +43,8 @@ const AdminLayout = () => {
             <Box className={classes.sidebar}>
                 <Sidebar />
             </Box>
+
             <Box className={classes.main}>
-                {/* <TaskBoard /> */}
                 <Switch>
                     <Route path='/admin/dashboard'>
                         <DashBoard />

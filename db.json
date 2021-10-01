@@ -1,49 +1,36 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Iphone X",
-      "TypeProduct": "IP",
-      "description": "Iphone 13d",
-      "Price": "200$"
-    },
-    {
-      "id": "2",
-      "name": "XIAOMI 11s",
-      "TypeProduct": "XM",
-      "description": "XIAOMI MI 10 aaa",
-      "Price": "300$"
-    },
-    {
       "id": "3",
       "name": "SAMSUNG GALAXY 12",
       "TypeProduct": "SS",
       "description": "SAMSUNG GALAXY 12222222",
-      "Price": "400$"
+      "Price": "400$",
+      "img": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg"
     },
     {
       "id": " 4",
       "name": "Iphone XXx",
       "TypeProduct": "IP",
       "description": "Iphone 13",
-      "Price": "2000$"
+      "Price": "2000$",
+      "img": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/i/p/ip13-pro_2.jpg"
     },
     {
       "id": "5",
       "name": "XIAOMI 111",
       "TypeProduct": "XM",
       "description": "XIAOMI MI 10 aaa",
-      "Price": "3000$"
-    },
-    {
-      "id": "6",
-      "name": "SAMSUNG GALAXY 122",
-      "TypeProduct": "SS",
-      "description": "SAMSUNG GALAXY 12222222",
-      "Price": "404200$"
+      "Price": "3000$",
+      "img": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/x/i/xiaomi-mi-11-lite-5g-2_10.png"
     }
   ],
   "dataType": [
+    {
+      "id": "1",
+      "code": "IP",
+      "name": "Iphone"
+    },
     {
       "id": "2",
       "code": "XM",
@@ -53,11 +40,14 @@
       "id": "3",
       "code": "SS",
       "name": "SAMSUNG"
-    },
+    }
+  ],
+  "user": [
     {
-      "name": "Iphone",
-      "code": "IP",
-      "id": "lebF77o"
+      "name": "123123",
+      "email": "a@gmail.com",
+      "password": "123123123",
+      "id": "5ea2-152c-f7f5-e1cf-9fcf"
     }
   ]
 }

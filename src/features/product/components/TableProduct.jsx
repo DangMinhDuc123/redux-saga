@@ -1,5 +1,6 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(theme => ({
     table: {},
@@ -9,8 +10,9 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const TableProduct = (props) => {
+    const { t } = useTranslation();
     const classes = useStyles();
-    const { productList, onRemove, onEdit } = props;
+    const { productList, onRemove, onEdit, typeProductMap } = props;
     const [selectedProduct, setSelectedProduct] = useState(productList);
     const [open, setOpen] = useState(false);
 
@@ -34,12 +36,12 @@ const TableProduct = (props) => {
                     <TableHead>
                         <TableRow>
                             <TableCell >#</TableCell>
-                            <TableCell >Name</TableCell>
-                            <TableCell >IMG</TableCell>
-                            <TableCell >Price</TableCell>
-                            <TableCell >DES</TableCell>
-                            <TableCell >TypeProduct</TableCell>
-                            <TableCell align="right">Actions</TableCell>
+                            <TableCell >{t('NameTableProduct')}</TableCell>
+                            <TableCell >{t('ImgTableProduct')}</TableCell>
+                            <TableCell >{t('PriceTableProduct')}</TableCell>
+                            <TableCell >{t('DesTableProduct')}</TableCell>
+                            <TableCell >{t('TypeProductTableProduct')}</TableCell>
+                            <TableCell align="right">{t('ActionsTableProduct')}</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -47,15 +49,15 @@ const TableProduct = (props) => {
                             <TableRow key={product.id}>
                                 <TableCell>{id + 1}</TableCell>
                                 <TableCell>{product.name}</TableCell>
-                                <TableCell>IMG</TableCell>
+                                <TableCell><img src={product.img} alt="description" /></TableCell>
                                 <TableCell>{product.Price}</TableCell>
                                 <TableCell>{product.description}</TableCell>
-                                <TableCell>{product.TypeProduct}</TableCell>
+                                <TableCell>{typeProductMap[product.TypeProduct]?.name}</TableCell>
                                 <TableCell align="right">
                                     <Button className={classes.edit} variant="contained" color="primary"
-                                        onClick={() => onEdit(product)}>Edit</Button>
+                                        onClick={() => onEdit(product)}>{t('Edit')}</Button>
                                     <Button variant="outlined" color="secondary"
-                                        onClick={() => handleRemove(product)}>Delete</Button>
+                                        onClick={() => handleRemove(product)}>{t('Delete')}</Button>
                                 </TableCell>
                             </TableRow>
                         ))}
@@ -71,18 +73,18 @@ const TableProduct = (props) => {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                <DialogTitle id="alert-dialog-title">Remove a product ?</DialogTitle>
+                <DialogTitle id="alert-dialog-title">{t('DialogTitleDelete')}</DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                        Are you sure to remove product !!
+                        {t('TextDialogTitleDelete')}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
-                        Cancel
+                        {t('Cancel')}
                     </Button>
                     <Button onClick={() => handleRemoveConfirm(selectedProduct)} color="secondary" autoFocus>
-                        Remove !
+                        {t('Remove')}
                     </Button>
                 </DialogActions>
             </Dialog>

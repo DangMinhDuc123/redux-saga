@@ -1,30 +1,32 @@
 import { Switch, Route } from 'react-router-dom';
 import React from 'react';
-import LoginPage from './features/auth/pages/Login';
 import AdminLayout from './components/Layout/Admin';
-import NotFound from './components/common/NotFound';
 import PrivateRoute from './components/common/PrivateRoute';
+import NotFound from './components/common/NotFound';
+import LoginPage from './features/auth/LogIn/Login';
+import Register from './features/auth/Register/index';
 
+;
 
 function App() {
-
   return (
-
     <Switch>
+      <PrivateRoute path="/admin">
+        <AdminLayout />
+      </PrivateRoute>
 
       <Route path="/login">
         <LoginPage />
       </Route>
 
-      <PrivateRoute path="/admin">
-        <AdminLayout />
-      </PrivateRoute>
+      <Route path="/register">
+        <Register />
+      </Route>
 
-      <Route >
+      <Route>
         <NotFound />
       </Route>
     </Switch>
-
   );
 }
 

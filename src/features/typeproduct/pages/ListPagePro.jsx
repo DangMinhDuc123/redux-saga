@@ -1,11 +1,11 @@
 import { Box, Button, makeStyles, Typography } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { listTypeProducts } from '../../../redux/actions/typeproduct'
 import TableTypePro from '../components/TableTypePro';
-import typeProductApi from '../../../api/typeProductApi';
 import { Link, useHistory } from 'react-router-dom'
-// import { createSelector } from 'reselect';
+import { selectTypeProductList, typeProductActions } from '../typeProductSlice';
+import typeProductApi from '../../../api/typeProductApi';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({
     root: {},
@@ -18,13 +18,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ListPagePro = () => {
+    const { t } = useTranslation();
     const history = useHistory();
     const classes = useStyles();
-    const listTypeProduct = useSelector(state => state.typeProductReducer.typeProduct)
+    const listTypeProduct = useSelector(selectTypeProductList)
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(listTypeProducts())
+        dispatch(typeProductActions.fetchTypeProductList())
     }, [dispatch])
 
     const handleRemoveProduct = async (typeProduct) => {
@@ -42,10 +43,10 @@ const ListPagePro = () => {
     return (
         <Box className={classes.root}>
             <Box className={classes.titleContainer} style={{ justifyContent: 'space-between', display: 'flex', flexFlow: 'row nowarp' }}>
-                <Typography variant='h4'>List Type Products</Typography>
+                <Typography variant='h4'>{t('TypeProductTableProduct')}</Typography>
                 <Link to='/admin/typeProduct/add' style={{ textDecoration: 'none' }}>
                     <Button variant='contained' color='primary'>
-                        Thêm Mới
+                        {t('Add')}
                     </Button>
                 </Link>
             </Box>
