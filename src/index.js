@@ -8,14 +8,17 @@ import { CssBaseline } from '@material-ui/core';
 import { history } from './utils'
 import { ConnectedRouter } from 'connected-react-router'
 import './i18n/i18n'
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <Suspense fallback="loading">
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <CssBaseline />
-          <App />
+          <BrowserRouter>
+            <CssBaseline />
+            <App />
+          </BrowserRouter>
         </ConnectedRouter>
       </Provider>
     </Suspense>

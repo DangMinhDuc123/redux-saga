@@ -1,12 +1,11 @@
 import { Switch, Route } from 'react-router-dom';
 import React from 'react';
-import Admin from './features/Admin';
+import AdminLayout from './components/Admins/Layout/AdminLayout'
 
+  // import LoginPage from './features/auth/LogIn/Login';
+  // import Register from './features/auth/Register/index';
 
-// import LoginPage from './features/auth/LogIn/Login';
-// import Register from './features/auth/Register/index';
-
-;
+  ;
 
 function App() {
   return (
@@ -14,9 +13,7 @@ function App() {
       <Route path="/" exact >
         a
       </Route>
-      <Route path="/admin" exact component={Admin}>
-        <Admin />
-      </Route>
+      <Route path='/admin' component={AdminLayout} />
     </Switch>
   );
 }
