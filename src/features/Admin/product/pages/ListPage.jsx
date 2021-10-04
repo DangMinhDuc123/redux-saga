@@ -1,10 +1,11 @@
 import { Box, Button, makeStyles, Typography } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import TableTypePro from '../components/TableTypePro';
+import TableProduct from '../components/TableProduct';
+import productApi from '../../../../api/productApi';
+import { selectTypeProductMap } from '../../typeproduct/typeProductSlice';
 import { Link, useHistory } from 'react-router-dom'
-import { selectTypeProductList, typeProductActions } from '../typeProductSlice';
-import typeProductApi from '../../../api/typeProductApi';
+import { productActions, selectProductList } from '../productSlice';
 import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({
@@ -17,42 +18,44 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const ListPagePro = () => {
+const ListPage = () => {
     const { t } = useTranslation();
     const history = useHistory();
     const classes = useStyles();
-    const listTypeProduct = useSelector(selectTypeProductList)
+    const productList = useSelector(selectProductList);
+    const typeProductMap = useSelector(selectTypeProductMap);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(typeProductActions.fetchTypeProductList())
+        dispatch(productActions.fetchProductList())
     }, [dispatch])
 
-    const handleRemoveProduct = async (typeProduct) => {
+    const handleRemoveProduct = async (product) => {
         try {
-            await typeProductApi.remove(typeProduct.id);
+            await productApi.remove(product.id);
+            dispatch(productActions.fetchProductList())
         } catch (err) {
             console.log(err);
         }
     }
 
 
-    const handleEditProduct = async (typeProduct) => {
-        history.push(`/admin/typeProduct/${typeProduct.id}`)
+    const handleEditProduct = async (product) => {
+        history.push(`/admin/products/${product.id}`)
     }
     return (
         <Box className={classes.root}>
             <Box className={classes.titleContainer} style={{ justifyContent: 'space-between', display: 'flex', flexFlow: 'row nowarp' }}>
-                <Typography variant='h4'>{t('TypeProductTableProduct')}</Typography>
-                <Link to='/admin/typeProduct/add' style={{ textDecoration: 'none' }}>
+                <Typography variant='h4'>{t('Products')}</Typography>
+                <Link to='/admin/products/add' style={{ textDecoration: 'none' }}>
                     <Button variant='contained' color='primary'>
                         {t('Add')}
                     </Button>
                 </Link>
             </Box>
-            <TableTypePro listTypeProduct={listTypeProduct} onRemove={handleRemoveProduct} onEdit={handleEditProduct} />
+            <TableProduct productList={productList} onRemove={handleRemoveProduct} onEdit={handleEditProduct} typeProductMap={typeProductMap} />
         </Box >
     );
 };
 
-export default ListPagePro;
+export default ListPage;

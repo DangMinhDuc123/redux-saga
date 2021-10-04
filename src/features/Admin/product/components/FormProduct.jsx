@@ -2,8 +2,8 @@ import { Box, Button } from '@material-ui/core';
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useSelector } from 'react-redux';
-import { InputField } from '../../../components/FormField';
-import { SelectField } from '../../../components/FormField/SelectField';
+import { InputField } from '../../../../components/Admins/FormField';
+import { SelectField } from '../../../../components/Admins/FormField/SelectField';
 import { selectTypeProOptions } from '../../typeproduct/typeProductSlice';
 import { useTranslation } from 'react-i18next';
 

@@ -3,18 +3,10 @@
     {
       "id": "3",
       "name": "SAMSUNG GALAXY 12",
-      "TypeProduct": "SS",
+      "TypeProduct": "XM",
       "description": "SAMSUNG GALAXY 12222222",
       "Price": "400$",
       "img": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/s/m/sm-f926_zfold3_5g_openback_phantomsilver_210611.jpg"
-    },
-    {
-      "id": " 4",
-      "name": "Iphone XXx",
-      "TypeProduct": "IP",
-      "description": "Iphone 13",
-      "Price": "2000$",
-      "img": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/i/p/ip13-pro_2.jpg"
     },
     {
       "id": "5",
@@ -23,6 +15,13 @@
       "description": "XIAOMI MI 10 aaa",
       "Price": "3000$",
       "img": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/x/i/xiaomi-mi-11-lite-5g-2_10.png"
+    },
+    {
+      "name": "LG",
+      "TypeProduct": "IP",
+      "description": "LG 2021",
+      "Price": "4000",
+      "id": "Yb3NYH6"
     }
   ],
   "dataType": [
@@ -48,6 +47,12 @@
       "email": "a@gmail.com",
       "password": "123123123",
       "id": "5ea2-152c-f7f5-e1cf-9fcf"
+    },
+    {
+      "name": "minhduc",
+      "email": "abc@gamil.com",
+      "password": "123123123",
+      "id": "35af-4198-67de-d1ce-58e9"
     }
   ]
 }

@@ -1,5 +1,5 @@
 import { takeLatest, call, put } from "@redux-saga/core/effects";
-import typeProductApi from '../../api/typeProductApi'
+import typeProductApi from '../../../api/typeProductApi'
 import { typeProductActions } from "./typeProductSlice";
 
 function* fetchTypeProductList(action) {

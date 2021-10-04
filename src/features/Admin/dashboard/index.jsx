@@ -1,9 +1,9 @@
 import React from 'react';
 
-const DashBoard = ({ userName }) => {
+const DashBoard = () => {
     return (
         <div>
-            Xin chào {userName} !!!
+            Xin chào !!!
         </div>
     );
 };

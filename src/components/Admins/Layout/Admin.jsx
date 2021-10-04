@@ -1,9 +1,9 @@
 import { Box, makeStyles } from '@material-ui/core';
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import DashBoard from '../../features/dashboard';
-import ProductFeatures from '../../features/product';
-import ListTypeProductFeatures from '../../features/typeproduct'
+import { Route, Switch } from 'react-router';
+import DashBoard from '../../../features/Admin/dashboard/index';
+import ProductFeatures from '../../../features/Admin/product';
+import ListTypeProductFeatures from '../../../features/Admin/typeproduct'
 import Header from '../common/Header';
 import Sidebar from '../common/Sidebar';
 
@@ -49,19 +49,18 @@ const AdminLayout = () => {
                     <Route path='/admin/dashboard'>
                         <DashBoard />
                     </Route>
-                </Switch>
-                <Switch>
+
                     <Route path='/admin/products'>
                         <ProductFeatures />
                     </Route>
-                </Switch>
-                <Switch>
+
                     <Route path='/admin/typeProduct'>
                         <ListTypeProductFeatures />
                     </Route>
                 </Switch>
             </Box>
         </Box>
+
     );
 };
 

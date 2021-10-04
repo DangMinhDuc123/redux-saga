@@ -1,7 +1,7 @@
 import { Box, Button } from '@material-ui/core';
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { InputField } from '../../../components/FormField';
+import { InputField } from '../../../../components/Admins/FormField';
 
 function FormTypeProduct({ initialValues, onSubmit }) {
     const { control, handleSubmit, formState: { isSubmitting } } = useForm({

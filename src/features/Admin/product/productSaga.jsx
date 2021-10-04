@@ -1,6 +1,6 @@
 import { takeLatest, call, put } from 'redux-saga/effects'
 import { productActions } from './productSlice'
-import productApi from '../../api/productApi'
+import productApi from '../../../api/productApi'
 
 function* fetchProductList(action) {
     try {

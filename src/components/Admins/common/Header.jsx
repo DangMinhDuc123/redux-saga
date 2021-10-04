@@ -1,7 +1,7 @@
 import { AppBar, Button, IconButton, makeStyles, Toolbar, Typography } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import React from 'react';
-import Language from '../../i18n/index';
+import Language from '../../../i18n/index';
 import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({

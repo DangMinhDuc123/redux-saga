@@ -2,66 +2,63 @@ import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@material-ui/core'
 import { ChevronLeft } from '@material-ui/icons'
 import { Link, useParams } from 'react-router-dom'
-import productApi from '../../../api/productApi';
-import FormProduct from '../components/FormProduct';
+import typeProductApi from '../../../../api/typeProductApi';
+import FormTypeProduct from '../components/FormTypeProduct';
 import { useHistory } from 'react-router-dom';
 
 
-const AddEditPage = () => {
+const AddEditPageType = () => {
     const history = useHistory();
-    const { productId } = useParams();
-    const isEdit = Boolean(productId);
-    const [product, setProduct] = useState(null);
+    const { typeProductId } = useParams();
+    const isEdit = Boolean(typeProductId);
+    const [typeProduct, setTypeProduct] = useState(null);
 
     useEffect(() => {
-        if (productId == null) return;
+        if (typeProductId == null) return;
         (async () => {
             try {
-                const data = await productApi.getById(productId);
-                setProduct(data);
+                const data = await typeProductApi.getById(typeProductId);
+                setTypeProduct(data);
             } catch (err) {
                 console.log('loi', err);
             }
         })();
-    }, [productId]);
+    }, [typeProductId]);
 
 
 
     const initialValues = {
         name: '',
-        TypeProduct: '',
-        description: '',
-        Price: '',
-        ...product,
+        code: '',
+        ...typeProduct,
     }
 
     const hanldeFormSubmit = async (formValues) => {
         if (isEdit) {
-            await productApi.update(formValues)
+            await typeProductApi.update(formValues)
         } else {
-            await productApi.add(formValues)
+            await typeProductApi.add(formValues)
         }
-        history.push('/admin/products');
+        history.push('/admin/typeProduct');
     }
 
 
     return (
         <>
             <Box>
-                <Link to='/admin/products'>
+                <Link to='/admin/typeProduct'>
                     <Typography variant='caption' style={{ display: 'flex', alignItems: 'center' }}>
                         <ChevronLeft /> Back
                     </Typography>
                 </Link>
             </Box>
             <Typography variant='h4'>
-                {isEdit ? 'Update' : 'Add new product'}
-
+                {isEdit ? 'Update' : 'Add new type product'}
             </Typography>
 
-            {(!isEdit || Boolean(product)) && (
+            {(!isEdit || Boolean(typeProduct)) && (
                 <Box mt={3}>
-                    <FormProduct initialValues={initialValues} onSubmit={hanldeFormSubmit} />
+                    <FormTypeProduct initialValues={initialValues} onSubmit={hanldeFormSubmit} />
                 </Box>
             )}
 
@@ -69,4 +66,4 @@ const AddEditPage = () => {
     );
 };
 
-export default AddEditPage;
+export default AddEditPageType;
