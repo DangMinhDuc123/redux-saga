@@ -1,7 +1,7 @@
 import axiosClient from "./axiosClient";
 
 const productApi = {
-    getAll() {
+    async getAll() {
         const url = '/products';
         return axiosClient.get(url);
     },
@@ -20,7 +20,7 @@ const productApi = {
     remove(id) {
         const url = `/products/${id}`;
         return axiosClient.delete(url);
-    },
+    }
 };
 
 export default productApi;

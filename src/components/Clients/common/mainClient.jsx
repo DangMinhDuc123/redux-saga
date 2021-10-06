@@ -1,9 +1,10 @@
 import React from 'react';
 
-const MainClient = ({ productList, typeProductMap }) => {
+const MainClient = () => {
     return (
         <div className="places-list">
-            {productList.map((product, id) => (
+
+            {/* {productList.map((product, id) => (
                 <div className="places-item">
                     <img src={product.img} alt="description" className="img-places" />
                     <div className="places-body">
@@ -13,7 +14,8 @@ const MainClient = ({ productList, typeProductMap }) => {
                         <a href="!#" className="places-buy-btn">Buy</a>
                     </div>
                 </div>
-            ))}
+            ))} */}
+            Main
         </div>
     );
 };
