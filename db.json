@@ -1,6 +1,22 @@
 {
   "products": [
     {
+      "id": "1",
+      "name": "Iphone 13",
+      "TypeProduct": "SS",
+      "description": "IPHONE 12222222",
+      "Price": "900$",
+      "img": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/i/p/ip13-pro_2.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Iphone 13",
+      "TypeProduct": "IP",
+      "description": "IPHONE 12222222",
+      "Price": "9100$",
+      "img": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/i/p/ip13-pro_2.jpg"
+    },
+    {
       "id": "3",
       "name": "SAMSUNG GALAXY 12",
       "TypeProduct": "XM",

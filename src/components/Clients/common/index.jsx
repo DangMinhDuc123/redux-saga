@@ -1,23 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './index.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { selectTypeProductMap } from '../../../features/typeproduct/typeProductSlice';
-import { productActions, selectProductList } from '../../../features/product/productSlice';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { selectTypeProductMap } from '../../../features/Admin/typeproduct/typeProductSlice';
+// import { productActions, selectProductList } from '../../../features/Admin/product/productSlice';
 import MainClient from './mainClient'
 import { Link } from 'react-router-dom';
 
 
 
 const HeaderClient = () => {
-
-    const productList = useSelector(selectProductList);
-    const typeProductMap = useSelector(selectTypeProductMap);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(productActions.fetchProductList())
-    }, [dispatch])
-
 
 
     return (
@@ -33,8 +24,6 @@ const HeaderClient = () => {
                     <Link to="/register" className="login-btn">Register</Link>
                 </div>
             </div>
-
-            <MainClient productList={productList} typeProductMap={typeProductMap} />
         </>
 
     );
