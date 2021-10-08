@@ -27,13 +27,13 @@ function FormProduct({ initialValues, onSubmit }) {
         <Box maxWidth={350}>
             <form onSubmit={handleSubmit(handleFormSubmit)}>
                 <InputField name="name" control={control} label={t('Name')} />
-                <SelectField name="TypeProduct" control={control} label={t('TypeProduct')} options={typeProOptions} />
+                <SelectField name="category" control={control} label={t('category')} options={typeProOptions} />
                 <InputField name="description" control={control} label={t('DesTableProduct')} />
-                <InputField name="Price" control={control} label={t('PriceTableProduct')} />
+                <InputField name="price" control={control} label={t('PriceTableProduct')} />
                 <Box mt={3}>
                     <Button variant="contained" type="submit" disabled={isSubmitting}>
                         {isSubmitting}
-                        {t('AddNew')} </Button>
+                        Save </Button>
                 </Box>
             </form>
         </Box>

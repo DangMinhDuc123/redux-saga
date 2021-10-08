@@ -5,11 +5,9 @@ import ListPages from './Pages/ListPages';
 
 const ClientProduct = () => {
     return (
-        <Box pt={4}>
             <Switch>
                 <Route path="/home" exact component={ListPages} />
             </Switch>
-        </Box>
     );
 };
 

@@ -13,7 +13,7 @@ const Product = ({ product }) => {
                     />
                 </Box>
                 <Typography variant="body2">{product.name}</Typography>
-                <Typography variant="body2">{product.Price}</Typography>
+                <Typography variant="body2">{product.price} $</Typography>
                 <Button >BUY</Button>
             </Box>
         </div>

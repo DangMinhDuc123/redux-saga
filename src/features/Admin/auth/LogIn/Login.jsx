@@ -12,7 +12,7 @@ function LoginPage() {
 
     // call API
     useEffect(() => {
-        fetch('http://localhost:3000/user')
+        fetch('http://localhost:1337/user-sessions')
             .then(res => res.json())
             .then(data => {
                 setList(data);

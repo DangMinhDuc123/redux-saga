@@ -1,24 +1,24 @@
 import axiosClient from "./axiosClient";
 
 const typeProductApi = {
-    getAll() {
-        const url = '/dataType';
-        return axiosClient.get(url);
+    getAll(params) {
+        const url = '/data-types';
+        return axiosClient.get(url, { params });
     },
     getById(id) {
-        const url = `/dataType/${id}`;
+        const url = `/data-types/${id}`;
         return axiosClient.get(url);
     },
     add(data) {
-        const url = '/dataType';
+        const url = '/data-types';
         return axiosClient.post(url, data);
     },
     update(data) {
-        const url = `/dataType/${data.id}`;
-        return axiosClient.patch(url, data);
+        const url = `/data-types/${data.id}`;
+        return axiosClient.put(url, data);
     },
     remove(id) {
-        const url = `/dataType/${id}`;
+        const url = `/data-types/${id}`;
         return axiosClient.delete(url);
     },
 };

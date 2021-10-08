@@ -36,7 +36,7 @@ function Register() {
                 .required("Required!")
         }),
         onSubmit: async (values) => {
-            await fetch('http://localhost:3000/user', {
+            await fetch('http://localhost:1337/user-sessions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

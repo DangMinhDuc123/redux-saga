@@ -50,9 +50,9 @@ const TableProduct = (props) => {
                                 <TableCell>{id + 1}</TableCell>
                                 <TableCell>{product.name}</TableCell>
                                 <TableCell><img src={product.img} alt="description" /></TableCell>
-                                <TableCell>{product.Price}</TableCell>
+                                <TableCell>{product.price} $</TableCell>
                                 <TableCell>{product.description}</TableCell>
-                                <TableCell>{typeProductMap[product.TypeProduct]?.name}</TableCell>
+                                <TableCell>{typeProductMap[product.category]?.name}</TableCell>
                                 <TableCell align="right">
                                     <Button className={classes.edit} variant="contained" color="primary"
                                         onClick={() => onEdit(product)}>{t('Edit')}</Button>

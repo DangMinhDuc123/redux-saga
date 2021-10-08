@@ -1,12 +1,18 @@
 import { Box, Grid } from '@material-ui/core';
 import React from 'react';
 import Product from './Product';
+import PropTypes from 'prop-types';
 
-const ProductList = (props) => {
-    const { data, loading } = props;
-    if (loading) {
-        return <h2>loading ......</h2>
-    }
+ProductList.propTypes = {
+    data: PropTypes.array,
+}
+
+ProductList.defaultProps = {
+    data: [],
+}
+
+
+function ProductList({ data }) {
     return (
         <Box>
             <Grid container>
@@ -17,7 +23,8 @@ const ProductList = (props) => {
                 ))}
             </Grid>
         </Box>
-    );
+    )
 };
 
 export default ProductList;
+

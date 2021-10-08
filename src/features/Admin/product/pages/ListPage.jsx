@@ -54,7 +54,7 @@ const ListPage = () => {
                 </Link>
             </Box>
             <TableProduct productList={productList} onRemove={handleRemoveProduct} onEdit={handleEditProduct} typeProductMap={typeProductMap} />
-        </Box >
+        </Box>
     );
 };
 

@@ -29,15 +29,20 @@ const AddEditPage = () => {
 
     const initialValues = {
         name: '',
-        TypeProduct: '',
+        category: '',
         description: '',
-        Price: '',
+        price: '',
         ...product,
     }
 
     const hanldeFormSubmit = async (formValues) => {
         if (isEdit) {
-            await productApi.update(formValues)
+            try {
+                await productApi.update(formValues);
+            } catch (err) {
+                console.log(err)
+            }
+
         } else {
             await productApi.add(formValues)
         }

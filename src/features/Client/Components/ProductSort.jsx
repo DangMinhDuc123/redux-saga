@@ -1,9 +1,8 @@
 import React from 'react';
-import Tabs from '@material-ui/core/Tabs';
+import { Tab,Tabs } from '@material-ui/core';
 
 const ProductSort = ({ currentSort, onChange }) => {
-    const [value, setValue] = React.useState(2);
-
+ 
     const handleSortChange = (event, newValue) => {
         if (onChange) onChange(newValue);
     }
@@ -14,8 +13,8 @@ const ProductSort = ({ currentSort, onChange }) => {
             onChange={handleSortChange}
             aria-label="disabled tabs example"
         >
-            <Tabs value="Price:ASC" label="Gía thấp tới cao"></Tabs>
-            <Tabs value="Price:DESC" label="Gía thấp tới cao"></Tabs>
+            <Tab value="price:ASC" label="Gía thấp tới cao">Gía thấp tới cao</Tab>
+            <Tab value="price:DESC" label="Gía cao xuống thấp">Gía cao xuống thấp</Tab>
         </Tabs>
     );
 };

@@ -33,7 +33,7 @@ export const selectTypeProductList = (state) => state.typeProduct.list;
 export const selectTypeProductLoading = (state) => state.typeProduct.loading;
 export const selectTypeProductMap = createSelector(selectTypeProductList, (typeProList) =>
     typeProList.reduce((map, typePro) => {
-        map[typePro.code] = typePro;
+        map[typePro.id] = typePro;
         return map
     }, {})
 )
@@ -41,7 +41,7 @@ export const selectTypeProductMap = createSelector(selectTypeProductList, (typeP
 export const selectTypeProOptions = createSelector(selectTypeProductList, (typeProList) =>
     typeProList.map((typePro) => ({
         label: typePro.name,
-        value: typePro.code
+        value: typePro.id
     }))
 );
 

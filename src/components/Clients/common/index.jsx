@@ -1,9 +1,5 @@
 import React from 'react';
 import './index.css'
-// import { useDispatch, useSelector } from 'react-redux';
-// import { selectTypeProductMap } from '../../../features/Admin/typeproduct/typeProductSlice';
-// import { productActions, selectProductList } from '../../../features/Admin/product/productSlice';
-import MainClient from './mainClient'
 import { Link } from 'react-router-dom';
 
 

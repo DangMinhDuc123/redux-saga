@@ -1,12 +1,8 @@
 import { Switch, Route } from 'react-router-dom';
 import React from 'react';
 import AdminLayout from './components/Admins/Layout/AdminLayout';
-import './index.css'
-
-// import LoginPage from './features/auth/LogIn/Login';
-// import Register from './features/auth/Register/index';
-
-// import ClientLayout from './components/Clients/Layout/ClientLayout';
+import LoginPage from './features/Admin/auth/LogIn/Login';
+import Register from './/features/Admin/auth/Register';
 import ClientProduct from './features/Client';
 
 function App() {
@@ -14,6 +10,8 @@ function App() {
     <Switch>
       <Route path="/home" exact component={ClientProduct} />
       <Route path='/admin' component={AdminLayout} />
+      <Route path='/login' component={LoginPage}/>
+      <Route path='/register' component={Register}/>
     </Switch>
   );
 }
